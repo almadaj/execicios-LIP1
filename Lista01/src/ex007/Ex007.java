@@ -6,7 +6,7 @@ public class Ex007 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int hrs;
-        double price, salario;
+        double price;
 
         System.out.println("Digite número de horas trabalhadas:");
         hrs = s.nextInt();
