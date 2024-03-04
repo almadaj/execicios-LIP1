@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class exAula002 {
     public static void main(String[] args) {
+        //Aula de Array
         int[][] matriz = new int[3][3];
         int soma = 0;
         Scanner s = new Scanner(System.in);
