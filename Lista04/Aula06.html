@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Example</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h2>My Form API</h2>
+    <input id="my-input" type="number" min="50" max="400" required>
+    <button onclick="validyInput()">Testing Field</button>
+    <div id="result"></div>
+    <script>
+     function validyInput(){
+      const myInput = document.getElementById("my-input")
+      if(!myInput.checkValidity()){
+        document.getElementById("result").innerHTML = myInput.validationMessage
+      }else{
+        document.getElementById("result").innerHTML = "Input Data OK"
+      }
+     }
+    </script>
+  </body>
+</html>

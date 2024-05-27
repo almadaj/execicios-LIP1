@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Example</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Geo Localização</h1>
+    <button onclick="getGeolocation()">Mostrar</button>
+    <div id="geolocation"></div>
+    <script>
+      const element = document.getElementById("geolocation")
+      function getGeolocation(){
+        if (navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(
+            showGeoLocation
+          )
+        }else{
+          element.innerHTML = "Geolocation API is not supported"
+        }
+        function showGeoLocation(position){
+          element.innerHTML = "LAT: " + position.coords.latitude + "</br>LONG: " + position.coords.longitude
+        }
+      }
+    </script>
+  </body>
+</html>
