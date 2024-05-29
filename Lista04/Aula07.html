@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h2>Counter API</h2>
+  <p id="counting"></p>
+  <button onclick="startCount()">Start</button>
+  <button onclick="stopCount()">Stop</button>
+  <script src="script.js">
+    let worker
+    function startCount() {
+      if (typeof worker == "undefined") {
+        worker = new Worker("script.js")
+      }
+      worker.onmessage = function (event) {
+        document.getElementById(counting)
+        innerHTML = event.data
+      }
+    }
+    function stopCount() {
+      worker.terminate()
+      worker = undefined
+    }
+  </script>
+</body>
+
+</html>
